@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import IndexScreen from './src/Screens/IndexScreen'
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
+import {BlogProvider} from './src/Context/BlogContext'
 
 
 const navigator = createStackNavigator({
@@ -20,5 +21,10 @@ const navigator = createStackNavigator({
 const App = createAppContainer(navigator);
 
 export default ()=>{
-return <App/>
+return (
+  <BlogProvider>
+     <App/>
+  </BlogProvider>
+)
+
 }
